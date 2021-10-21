@@ -9,4 +9,18 @@ RSpec.describe "Api::V1::CashFlows", type: :request do
       expect(response).to be_successful
     end
   end
+  describe "GET /account_state/:user_id" do
+    it "should show account_state" do
+      ivan = User.create(nikname: 'Ivan')
+      get "/api/v1/account_state/#{ivan.id}"
+      expect(response).to be_successful
+    end
+  end
+  describe "GET /total/:user_id" do
+    it "should show total" do
+      ivan = User.create(nikname: 'Ivan')
+      get "/api/v1/total/#{ivan.id}"
+      expect(response).to be_successful
+    end
+  end
 end
