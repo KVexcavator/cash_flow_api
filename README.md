@@ -41,5 +41,3 @@ http localhost:3000/api/v1/users
 
 ручка 1: выписка по всем операциям пользователя с отбором по периоду (Наименование дохода (расхода), сумма, дата)
 ручка 2: состояние баланса на начало и конец периода
-
-rails g model CashFlow title:string price:money user:belongs_to
