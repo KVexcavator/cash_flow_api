@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: 22551
+  pool: 70
+
+development:
+  <<: *default
+  database: cfa_dev
+
+test:
+  <<: *default
+  database: cfa_test
+
+production:
+  <<: *default
+  database: cfa_prod
