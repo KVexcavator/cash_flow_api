@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.delete_all
+users = User.create([{nikname: 'User1'},{nikname: 'User2'}])
+CashFlow.create(title: 'test1', is_income: true, price: 20.20, user: users.first)
