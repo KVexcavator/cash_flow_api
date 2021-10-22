@@ -12,6 +12,17 @@ class Api::V1::CashFlowsController < ApplicationController
   end
   # GET /api/v1/total/:user_id
   def total
-    render json: { str: "Helo"}
+    user = User.find(params[:user_id])
+    @total = 0
+    cash_flow = CashFlow.where( user: user).last_week
+    cash_flow.each do |c|
+      if c.is_income
+        @total = @total + c.price
+      else
+        @total = @total - c.price
+      end
+    end
+    render json: @total
   end
+  
 end
