@@ -37,8 +37,11 @@ bundle exec rspec
 модель 1: юзеры (user)
 http localhost:3000/api/v1/users
 модель 2: денежный поток (cash_flow)
+http localhost:3000/api/v1/cash_flows
 связь моделей: user -> has_many -> cash_flow
 
 
 ручка 1: выписка по всем операциям пользователя с отбором по периоду (Наименование дохода (расхода), сумма, дата)
+http localhost:3000/api/v1/account_state/:user_id
 ручка 2: состояние баланса на начало и конец периода
+http localhost:3000/api/v1/total/:user_id
